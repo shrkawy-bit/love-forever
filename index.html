@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> love forever 💌</title>
+    <style>
+        /* تصميم صفحة كلمة المرور */
+        body {
+            font-family: 'Arial', sans-serif;
+            
+            /* 1. اللون الأساسي (وردي فاتح جداً) */
+            background-color: #ffe0e6; 
+            
+            /* 2. الصورة كنمط خلفي متكرر */
+            background-image: url('heart_pattern.png'); 
+            
+            /* 3. تكرار الصورة لعمل النمط */
+            background-repeat: repeat; 
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #4a148c; 
+        }
+        }
+        }
+        }
+        #auth-page {
+            text-align: center;
+            padding: 30px;
+            border-radius: 15px;
+            background-color: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        #auth-page input[type="password"] {
+            padding: 10px;
+            margin: 15px 0;
+            border: 2px solid #e91e63; /* لون الحب */
+            border-radius: 8px;
+            width: 250px;
+            text-align: center;
+            font-size: 1.1em;
+        }
+        #auth-page button {
+            background-color: #e91e63;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s;
+        }
+        #auth-page button:hover {
+            background-color: #c2185b;
+        }
+
+        /* تصميم الموقع الداخلي */
+        #content-page {
+            display: none; /* يتم إخفاؤها حتى يتم إدخال الباسورد */
+            width: 100%;
+            max-width: 900px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #880e4f; /* عنوان مميز */
+            border-bottom: 3px solid #ff80ab;
+            padding-bottom: 10px;
+        }
+        .romantic-text {
+            font-style: italic;
+            margin: 20px 0;
+            line-height: 1.6;
+            font-size: 1.2em;
+            color: #ad1457;
+            background-color: #ffebee;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .photo-gallery {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .photo-gallery img {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            border: 5px solid white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            margin: 10px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        .photo-gallery img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="auth-page">
+        <h1>🤫</h1>
+        <p>الرجاء إدخال كلمة المرور السرية للمتابعة:</p>
+        <input type="password" id="password-input" placeholder="كلمة المرور هنا">
+        <button onclick="checkPassword()">ادخل</button>
+        <p id="message" style="color: red; margin-top: 10px;"></p>
+    </div>
+
+    <div id="content-page">
+        <h1>💗 For You Ganty</h1>
+
+        <audio id="background-music" controls autoplay loop>
+            <source src="romantic_song.mp3" type="audio/mpeg">
+            متصفحك لا يدعم تشغيل الملف الصوتي.
+        </audio>
+        <p style="margin-top: 5px; font-size: 0.9em; color: #757575;"></p>
+        
+        <div class="romantic-text">
+            "💗💗💗You mean the world to me. I love you my beautiful girl forever."
+            <br><br>
+            **❤️ 23/9/2024 ❤️**
+        </div>
+    
+        <h2></h2>
+        <div class="photo-gallery">
+            <img src="pic1.jpg" alt="صورة أولى">
+            <img src="pic2.jpg" alt="صورة ثانية">
+            <img src="pic3.jpg" alt="صورة ثالثة">
+            <img src="pic4.jpg" alt="صورة رابعة">
+            <img src="pic5.jpg" alt="صورة خامسة">
+            <img src="pic6.jpg" alt="صورة سادسة">
+            
+            </div>
+    </div>
+
+    <script>
+        // *** قم بتغيير كلمة المرور هذه إلى الكلمة التي تريدها ***
+        const CORRECT_PASSWORD = "2392024"; 
+
+        function checkPassword() {
+            const input = document.getElementById('password-input').value;
+            const message = document.getElementById('message');
+            const authPage = document.getElementById('auth-page');
+            const contentPage = document.getElementById('content-page');
+            const audioPlayer = document.getElementById('background-music');
+
+            if (input === CORRECT_PASSWORD) {
+                // كلمة المرور صحيحة
+                authPage.style.display = 'none';
+                contentPage.style.display = 'block';
+                // محاولة تشغيل الموسيقى (قد تحتاج لمرة نقر من المستخدم بسبب قيود المتصفحات)
+                audioPlayer.play().catch(error => {
+                    console.log("لم يتم تشغيل الأغنية تلقائياً، قد تحتاج لنقر من المستخدم.");
+                    // يمكن عرض رسالة هنا لطلب النقر على زر التشغيل
+                });
+                
+            } else {
+                // كلمة المرور خاطئة
+                message.textContent = "كلمة المرور غير صحيحة. حاول مرة أخرى.";
+            }
+        }
+    </script>
+</body>
+</html>
